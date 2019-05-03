@@ -65,7 +65,7 @@
         @if(isset($buku))
           /update/{{$buku->id}}
         @else
-          /form/input-process
+          /store
         @endif
       " method="post">
         {{ csrf_field() }}

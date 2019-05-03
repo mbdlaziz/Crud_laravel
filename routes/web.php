@@ -14,15 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/create', 'BukuController@create');
-
-Route::post('/input', 'BukuController@store');
-
+Route::get('/form', 'BukuController@input');
+Route::post('/store','BukuController@store');
 Route::get('/view', 'BukuController@view');
-
-Route::get('/destroy', 'BukuController@destroy');
-
-Route::get('/edit', 'BukuController@edit');
-
-Route::post('/update/{id}', 'FormController@update');
+Route::get('/destroy/{id}', 'BukuController@destroy');

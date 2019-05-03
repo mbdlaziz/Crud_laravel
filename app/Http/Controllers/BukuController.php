@@ -9,26 +9,13 @@ use Illuminate\Http\Request;
 class BukuController extends Controller
 {
   
-    public function index()
-    {
-        //
-    }
-
-
-    public function create()
+    public function input()
     {
         return view ('form');
     }
-
     
     public function store(Request $request)
     {
-        $request->validate([
-            'judul'=>'required',
-            'penerbit'=>'required',
-            'tahun_terbit'=>'required|integer',
-            'pengarang'=>'required'
-        ]);
         $buku = new Buku([
             'judul'=>$request->get ("judul"),
             'penerbit'=>$request->get ("penerbit"),
@@ -40,30 +27,15 @@ class BukuController extends Controller
         return redirect('/view')->with('Success','Data buku telah ditambahkan');
     }
 
-    public function view()
-    {      
-        $buku = Buku::all();
-        return view('view', compact('buku'));
-    }
-
-    public function edit()
-    {
-        $buku = Buku::find();
-        return view('form', compact('buku'));
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    
-    public function destroy()
-    {
-        $buku = Buku::find();
-        $buku->delete();
-
-        return redirect('/');
-    }
+public function view()
+{
+  $buku = Buku::all();
+  return view ('view', compact('buku'));
+}
+public function destroy($id)
+{
+  $buku = Buku::find($id);
+  $buku->delete();
+  return redirect('/view');
+}
 }
