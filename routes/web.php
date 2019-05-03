@@ -18,3 +18,5 @@ Route::get('/form', 'BukuController@input');
 Route::post('/store','BukuController@store');
 Route::get('/view', 'BukuController@view');
 Route::get('/destroy/{id}', 'BukuController@destroy');
+Route::get('/edit/{id}', 'BukuController@edit');
+Route::post('/update/{id}', 'BukuController@update');

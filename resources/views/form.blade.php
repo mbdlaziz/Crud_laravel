@@ -73,8 +73,8 @@
         <input type="text" id="judul" name="judul" value='{{ isset($buku) ? $buku->judul : null }}'/><br>
         <label for="penerbit">Penerbit</label><br>
         <input type="text" id="penerbit" name="penerbit" value='{{ isset($buku) ? $buku->penerbit : null }}'/><br>
-        <label for="tahun_terbit">Tahun terbit</label><br>
-        <input type="text" id="tahun_terbit" name="tahun_terbit" value='{{ isset($buku) ? $buku->tahun_terbit : null }}'/><br>
+        <label for="tahu_terbit">Tahun terbit</label><br>
+        <input type="text" id="tahu_terbit" name="tahu_terbit" value='{{ isset($buku) ? $buku->tahu_terbit : null }}'/><br>
         <label for="pengarang">Pengarang</label><br>
         <input type="text" id="pengarang" name="pengarang" value='{{ isset($buku) ? $buku->pengarang : null }}'/><br><br>
         <input type="submit" name="submit" class="kirim" />

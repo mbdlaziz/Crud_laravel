@@ -82,7 +82,7 @@
                   <th>{{$buku->id}}</th>
                   <td>{{$buku->judul}}</td>
                   <td>{{$buku->pengarang}}</td>
-                  <td>{{$buku->tahun_terbit}}</td>
+                  <td>{{$buku->tahu_terbit}}</td>
                   <td>{{$buku->penerbit}}</td>
                   <td>
                     <a href="#" class="btn btn-outline-secondary">View</a>
