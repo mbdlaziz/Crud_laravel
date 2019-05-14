@@ -11,12 +11,18 @@
 |
 */
 
+Route::group(['middleware' => ['auth']], function(){
+    Route::get('/view', 'BukuController@view');
+});
 Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/form', 'BukuController@input');
 Route::post('/store','BukuController@store');
-Route::get('/view', 'BukuController@view');
+// Route::get('/view', 'BukuController@view');
 Route::get('/destroy/{id}', 'BukuController@destroy');
 Route::get('/edit/{id}', 'BukuController@edit');
 Route::post('/update/{id}', 'BukuController@update');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
